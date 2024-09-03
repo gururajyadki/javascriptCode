@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let input1 = [[3,4,58],[709,8,9,[10,11]],[111,2]]
+        function flatArray(input1){
+            let newArr = [];
+
+            for(let i = 0 ;i<input1.length ; i++){debugger;
+                if(typeof input1[i] === "object" && input1[i] !== null){
+                    let nestedArr = flatArray(input1[i])
+                    //newArr.push(nestedArr);
+                    for(let j =0 ; j < nestedArr.length ;j++){
+                        newArr.push(nestedArr[j])
+                    }
+                }
+                else{
+                    newArr.push(input1[i])
+                }
+            }
+            return newArr;
+        }
+
+        console.log(flatArray(input1))
+    </script>
+</body>
+</html>

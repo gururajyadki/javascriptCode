@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //reverse a elements in a element 
+        let arr = ["apple" , "banana" , "cat" , "dog"]
+        function reverseString(arr){
+            let newArr = [];
+            for(i = arr.length -1 ; i >=0 ; i--){
+                newArr.push(arr[i]);
+            }
+            return newArr;
+        }
+        //console.log(reverseString(arr))
+
+        let array = ["apple" , "banana" , "cat" , "dog"]
+
+        function reverseStrEle (array){
+            let newString = '';
+            let newArray = [];
+            for (i = 0 ; i < array.length ; i++){
+               // newArray.push(array[i].split('').reverse().join(''));
+               for (j=array[i].length-1 ; j >= 0 ; j-- ){
+                newString += array[i][j];
+                //console.log(newString) 
+               }
+               newArray.push(newString);
+               newString='';
+            }
+            return newArray;
+        }
+        console.log(reverseStrEle(array));
+    </script>
+</body>
+</html>

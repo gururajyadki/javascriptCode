@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [2,4,3,5,6,8,1,7];
+        //buuble sort approch
+        function Sort(arr){
+            let even =[];
+            let odd = [];
+
+            for (i of arr){
+                if(i % 2 == 0) even.push(i);
+                else odd.push(i);
+            }
+
+            for(i = 0 ; i < arr.length  ; i++){
+                for(j= 0 ; j < arr.length-1 ; j++){
+                    if(even[j] > even[j+1]){
+                            [even[j] , even[j+1]] =[even[j+1] , even[j]] 
+                    }
+                }
+            }
+            for(i = 0 ; i < arr.length  ; i++){
+                for(j= 0 ; j < arr.length-1 ; j++){
+                    if(odd[j] > odd[j+1]){
+                            [odd[j] , odd[j+1]] =[odd[j+1] , odd[j]] 
+                    }
+                }
+            }
+
+            return even.concat(odd);
+        }
+
+        console.log(Sort(arr))
+
+    </script>
+</body>
+</html>

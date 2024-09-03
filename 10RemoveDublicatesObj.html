@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arrDublicates = [
+            { id: 1, name: 'Alice' },
+            { id: 2, name: 'Bob' },
+            { id: 1, name: 'Alice' }, // Duplicate
+            { id: 3, name: 'Charlie' },
+            { id: 2, name: 'Bob' }    // Duplicate
+        ];
+
+        // create new object and array 
+        // loop over the dublicate array -- check in the new object , does the dublicates each element are present
+        // if nt push to new array and add that element to obj with id 
+
+        function removeDublicates(arrDublicates){
+            let newObj = {};
+            let newArr = [];
+
+            for (i = 0; i < arrDublicates.length ; i++){
+                if(!newObj[arrDublicates[i].id]){
+                    newArr.push(arrDublicates[i]);
+                    newObj[arrDublicates[i].id] = true ;
+                }
+            }
+            return newArr;
+        }
+
+        console.log(removeDublicates(arrDublicates))
+
+
+
+     //2   //unique object 
+  let input = [{name : 'sai'},{name : 'Nang'},{name : 'sai'},{name : '111111'}]
+  //outopt : [{name : 'sai'},{name : 'Nang'},{name : '111111'}]
+  
+  function uniqueObj(obj){
+    let newObj = {}
+    let newArr = []
+
+    for(i = 0 ; i < obj.length ; i++){
+      if(newObj[obj[i].name] == undefined){
+        newArr.push(obj[i]);
+        newObj[obj[i].name] = 1;
+      }
+    }
+    return newArr;
+  }
+  console.log(uniqueObj(input))
+    </script>
+</body>
+</html>

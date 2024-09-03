@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = [1,2,3];
+     let arr2 = [1,10,4]
+
+     function checkSquareArr (arr1 ,arr2){
+        if(arr1.length != arr2.length) return false
+        let obj1 = {}
+        let obj2 = {}
+
+        for(let i =0; i< arr1.length ;i++){
+           if(obj1[arr1[i]] == undefined){
+            obj1[arr1[i]] = 1
+           }else{
+            obj1[arr1[i]]++
+           }
+        }
+
+        for(let i =0; i< arr2.length ;i++){
+           if(obj2[arr2[i]] == undefined){
+            obj2[arr2[i]] = 1
+           }else{
+            obj2[arr2[i]]++
+           }
+        }
+         
+        for(let el in obj1){
+            if( !(el ** 2 in obj2)){
+                return false
+            }
+            if (obj2[el**2] != obj1[el]) return false;
+        } 
+
+        return true
+        
+     }
+
+     console.log(checkSquareArr(arr1,arr2))
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,4,6,7]
+        // n = 7
+
+        function missingMultipleNum(arr , n){
+            //create a empty object  , and iterate the each array elements with same key 
+            //then check the key in the object campring with  object
+
+            let obj = {};
+            let missingNumber = [];
+            for(num of arr){
+                obj[num] = num;
+            }
+
+            for(i = 1 ; i <=n ; i++){
+                if(obj[i] == undefined){
+                    missingNumber.push(i);
+                }
+            }
+            return missingNumber ;
+        }
+        console.log(missingMultipleNum(arr , 7));
+
+    </script>
+</body>
+</html>

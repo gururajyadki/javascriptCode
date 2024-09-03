@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'gururaj';
+
+        function countOccurences(str){
+
+            let obj ={}
+            for( let i =0; i< str.length ; i++){
+                if(obj[str[i]] == undefined){
+                    obj[str[i]] = 1
+                }else{
+                    obj[str[i]] ++
+                }
+            }
+            return obj
+        }
+        console.log(countOccurences(str))
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // input = 'gururaj'
+        // output = 'jarurug' --> false
+
+        // input = 'pop'
+        // output = 'pop' --> false
+        function checkPalindrome(str){
+            let newstr = ''
+            for(i = str.length -1 ; i >=0 ; i--){
+                newstr += str[i];
+            }
+            
+            if(newstr == str){
+                return true;
+            }else return false ;
+        }
+
+        console.log(checkPalindrome('gururaj'));
+        console.log(checkPalindrome('pop'))
+
+    </script>
+</body>
+</html>

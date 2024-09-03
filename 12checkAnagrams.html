@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // let str1 = 'listen';
+        //let str2 = 'silent';
+        // create 2 object , loop each element of strimg to it
+        //then check those valus in new object
+        function checkAnagram (str1 , str2){
+            let newObj1 = {}
+            let newObj2 = {}
+
+            if(str1.length != str2.length){
+                return false;
+            }
+            for (i = 0 ; i < str1.length ;i++){
+               newObj1[str1[i]] = (newObj1[str1[i]] || 0 ) +1 
+            }
+            for (i = 0 ; i < str2.length ;i++){
+               newObj2[str2[i]] = (newObj2[str2[i]] || 0 ) +1 
+            }
+
+            for(el in newObj1){
+                if(newObj1[el] != newObj2[el]){
+                    return false;
+                }
+            }
+            return true
+        }
+
+     console.log(checkAnagram ('listen' , 'sllent'))
+     console.log(checkAnagram ('CAT' , 'RAT'))
+
+//2
+
+function check2StringContent (str1 , str2){
+      let newObj1 = {}
+      let newObj2 ={}
+
+      for(i = 0 ; i< str1.length ; i++){
+        if(!newObj1[str1[i]]){
+          newObj1[str1[i]] = 1;
+        }else newObj1[str1[i]]++
+      }
+      for(i = 0 ; i< str2.length ; i++){
+        if(!newObj2[str2[i]]){
+          newObj2[str2[i]] = 1;
+        }else newObj2[str2[i]]++
+      }
+      
+      for (el in newObj1){
+        if(newObj1[el] != newObj2[el]){
+          return false
+        }
+      }
+      return true
+   }
+
+   console.log(check2StringContent('listen' , 'sllent'))
+
+    </script>
+</body>
+</html>

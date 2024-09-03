@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = ["100","200","300"];
+        let arr2 = ["100","200"];
+        //1.check the lenth of array
+        //2.content matches to each other
+        function checkArr (arr1, arr2){
+            if(arr1.length != arr2.length){
+                return false
+            }
+            for(i=0;i<arr1.length;i++){
+                if(arr1[i] != arr2[i]) return false;
+            }
+            return true;
+        }
+
+        console.log(checkArr (arr1, arr2));
+    </script>
+</body>
+</html>
